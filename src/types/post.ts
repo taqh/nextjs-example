@@ -25,3 +25,15 @@ export type Post = {
     url: string;
   } | null;
 };
+
+export type Tag = {
+  id: string;
+  name: string;
+  slug: string;
+};
+
+export type Category = {
+  id: string;
+  name: string;
+  slug: string;
+};

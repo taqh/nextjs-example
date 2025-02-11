@@ -1,7 +1,10 @@
+import Container from "@/components/container"
 
 function Page() {
   return (
-    <div>Page</div>
+    <Container>
+      Hello
+    </Container>
   )
 }
 

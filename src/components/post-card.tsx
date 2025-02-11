@@ -21,6 +21,7 @@ function PostCard({ post }: PostCardProps) {
         <Image
           src={post.coverImage}
           alt={post.title}
+          fill
           loading='eager'
           className='object-cover size-full h-[260px]'
         />
@@ -32,7 +33,7 @@ function PostCard({ post }: PostCardProps) {
         <h2 className='font-serif text-2xl'>{post.title}</h2>
       </Link>
       <div className='flex items-center gap-2 font-mono text-muted-foreground'>
-        <time dateTime={post.publishedAt.toISOString()}>{formattedDate}</time>
+        <time dateTime={post.publishedAt.toString()}>{formattedDate}</time>
         <span className='mx-2'>-</span>
         <p>{post.author.name}</p>
       </div>
@@ -44,13 +45,13 @@ function PostCard({ post }: PostCardProps) {
             xmlns='http://www.w3.org/2000/svg'
             fill='none'
             viewBox='0 0 24 24'
-            stroke-width='1.5'
+            strokeWidth='1.5'
             stroke='currentColor'
             className='size-3'
           >
             <path
-              stroke-linecap='round'
-              stroke-linejoin='round'
+              strokeLinecap='round'
+              strokeLinejoin='round'
               d='m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25'
             ></path>
           </svg>

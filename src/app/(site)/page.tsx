@@ -1,23 +1,11 @@
 import Container from '@/components/container';
 import PostCard from '@/components/post-card';
-import { Post } from '@/types/post';
+import { getPosts } from '@/lib/query';
 import { Fragment } from 'react';
 
-const getPosts = async () => {
-  const url = process.env.MARBLE_API_URL;
-  const key = process.env.MARBLE_WORKSPACE_KEY;
-  try {
-    const res = await fetch(`${url}/${key}/posts`);
-    const data: Post[] = await res.json();
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-export default async function Home() {
+export default async function HomePage() {
   const posts = await getPosts();
-  if (!posts) return <div>loading...</div>;
+  if (!posts || !posts.length) return <div>No posts yet</div>;
 
   return (
     <section>
