@@ -65,7 +65,7 @@ export async function generateMetadata(
       title: post.title,
       description: post.description,
       publishedTime: new Date(post.publishedAt).toISOString(),
-      authors: [post.author.name],
+      authors: [...post.authors.map((author) => author.name)],
     },
   };
 }
@@ -100,14 +100,14 @@ async function Page({ params }: PageProps) {
           <time dateTime={data.publishedAt.toString()}>{formattedDate}</time>
           <div className='flex items-center gap-2'>
             <Image
-              src={data.author.image}
-              alt={data.author.name}
+              src={data.authors[0].image}
+              alt={data.authors[0].name}
               width={36}
               height={36}
               loading='eager'
               className='aspect-square shrink-0 size-8 rounded-full'
             />
-            <p className='text-muted-foreground'>{data.author.name}</p>
+            <p className='text-muted-foreground'>{data.authors[0].name}</p>
           </div>
         </div>
         <div className='relative min-h-[360px] md:min-h-[400px] lg:min-h-[430px]'>

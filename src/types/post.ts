@@ -6,10 +6,11 @@ export type Post = {
   description: string;
   coverImage: string;
   publishedAt: Date;
-  author: {
+  authors: {
+    id: string;
     name: string;
     image: string;
-  };
+  }[];
   category: {
     id: string;
     slug: string;

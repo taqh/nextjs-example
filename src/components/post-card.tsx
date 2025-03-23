@@ -35,7 +35,7 @@ function PostCard({ post }: PostCardProps) {
       <div className='flex items-center gap-2 font-mono text-muted-foreground'>
         <time dateTime={post.publishedAt.toString()}>{formattedDate}</time>
         <span className='mx-2'>-</span>
-        <p>{post.author.name}</p>
+        <p>{post.authors[0].name}</p>
       </div>
       <p className='text-muted-foreground line-clamp-2'>{post.description}</p>
       <div className='flex items-center justify-between'>
