@@ -5,9 +5,10 @@ import React from 'react';
 
 interface PostCardProps {
   post: Post;
+  showTags?: boolean;
 }
 
-function PostCard({ post }: PostCardProps) {
+function PostCard({ post, showTags = true }: PostCardProps) {
   const link = `/post/${post.slug}`;
   const formattedDate = new Date(post.publishedAt).toLocaleDateString('en-US', {
     day: '2-digit',
@@ -56,16 +57,18 @@ function PostCard({ post }: PostCardProps) {
             ></path>
           </svg>
         </a>
-        <ul className='flex items-center gap-2'>
-          {post.tags.map((tag) => (
-            <li
-              key={tag.id}
-              className='text-xs text-muted-foreground hover:text-foreground hover:underline'
-            >
-              <a href={`/tags/${tag.slug}`}>#{tag.name}</a>
-            </li>
-          ))}
-        </ul>
+        {showTags && (
+          <ul className='flex items-center gap-2'>
+            {post.tags.map((tag) => (
+              <li
+                key={tag.id}
+                className='text-xs text-muted-foreground hover:text-foreground hover:underline'
+              >
+                <a href={`/tag/${tag.slug}`}>#{tag.name}</a>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </li>
   );
