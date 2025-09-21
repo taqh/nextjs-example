@@ -1,6 +1,6 @@
 import Container from '@/components/container';
 import PostCard from '@/components/post-card';
-import { getPosts } from '@/lib/query';
+import { getPosts } from '@/lib/marble/queries';
 import { Fragment } from 'react';
 
 export default async function HomePage() {
