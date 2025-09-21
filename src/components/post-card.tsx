@@ -49,6 +49,7 @@ function PostCard({ post, showTags = true }: PostCardProps) {
             strokeWidth='1.5'
             stroke='currentColor'
             className='size-3'
+            aria-hidden='true'
           >
             <path
               strokeLinecap='round'

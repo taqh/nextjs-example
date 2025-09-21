@@ -1,6 +1,6 @@
 import Container from '@/components/container';
 import Prose from '@/components/prose';
-import { getPosts, getSinglePost } from '@/lib/query';
+import { getPosts, getSinglePost } from '@/lib/marble/queries';
 import { SITE } from '@/lib/site';
 import { Metadata } from 'next';
 import Image from 'next/image';

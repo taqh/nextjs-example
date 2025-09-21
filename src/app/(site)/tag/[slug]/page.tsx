@@ -1,8 +1,8 @@
-import Container from '@/components/container';
-import PostCard from '@/components/post-card';
-import { getTags } from '@/lib/query';
-import { MarblePostList } from '@/types/post';
-import { Fragment } from 'react';
+import Container from "@/components/container";
+import PostCard from "@/components/post-card";
+import { getTags } from "@/lib/marble/queries";
+import { MarblePostList } from "@/types/post";
+import { Fragment } from "react";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -36,8 +36,8 @@ async function Page({ params }: PageProps) {
 
   return (
     <section>
-      <Container className='py-10'>
-        <ul className='grid justify-center gap-20 grid-cols-[repeat(auto-fill,minmax(0,_400px))] w-full'>
+      <Container className="py-10">
+        <ul className="grid justify-center gap-20 grid-cols-[repeat(auto-fill,minmax(0,_400px))] w-full">
           {data.posts.map((post) => (
             <Fragment key={post.id}>
               <PostCard post={post} showTags={false} />
