@@ -14,7 +14,7 @@ export default function Footer() {
               rel='noopener'
               className='underline underline-offset-1 group-hover:text-foreground'
             >
-              marble
+              Marble
             </a>
           </p>
         </div>
