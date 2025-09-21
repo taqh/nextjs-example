@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
-import React from 'react';
+import type { HTMLAttributes } from 'react';
 
-type ProseProps = React.HTMLAttributes<HTMLElement> & {
+type ProseProps = HTMLAttributes<HTMLElement> & {
   as?: 'article';
   html: string;
 };

@@ -1,4 +1,4 @@
-import { MarbleAuthorList, MarbleCategoryList, MarblePost, MarblePostList, MarbleTagList } from '@/types/post';
+import type { MarbleAuthorList, MarbleCategoryList, MarblePost, MarblePostList, MarbleTagList } from '@/types/post';
 
 const url = process.env.MARBLE_API_URL;
 const key = process.env.MARBLE_WORKSPACE_KEY;
